@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>math-js-sdk test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <script type="text/javascript" src="./mathwallet.min.js"></script>
+</head>
+<body>
+<p id="info" style="word-break:break-all;"></p>
+<div><button onclick="openUrl();">openUrl</button></div>
+<div><button onclick="math_close();">close</button></div>
+<div><button onclick="math_back();">back</button></div>
+<div><button onclick="fullScreen_0();">fullScreen-0</button></div>
+<div><button onclick="fullScreen_1();">fullScreen-1</button></div>
+<div><button onclick="orientation_0();">orientation-0</button></div>
+<div><button onclick="orientation_1();">orientation-1</button></div>
+<div><button onclick="getAppInfo();">getAppInfo</button></div>
+<div><button onclick="getLanguage();">getLanguage</button></div>
+<div><button onclick="getWalletType();">getWalletType</button></div>
+<div><button onclick="getCurrentWallet();">getCurrentWallet</button></div>
+<div><button onclick="getWallets();">getWallets</button></div>
+<div><button onclick="getWalletList_ETH();">getWalletList_ETH</button></div>
+<div><button onclick="getWalletList_EOS();">getWalletList_EOS</button></div>
+<div><button onclick="getWalletList_NEO();">getWalletList_NEO</button></div>
+<div><button onclick="getWalletList_ONT();">getWalletList_ONT</button></div>
+
+<script type="text/javascript">
+  function openUrl(){
+    mathwallet.openUrl('https://www.baidu.com').then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function math_close(){
+    mathwallet.close().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function math_back(){
+    mathwallet.back().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function fullScreen_0(){
+    mathwallet.fullScreen(0).then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function fullScreen_1(){
+    mathwallet.fullScreen(1).then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function orientation_0(){
+    mathwallet.orientation(0).then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function orientation_1(){
+    mathwallet.orientation(1).then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getAppInfo(){
+    mathwallet.getAppInfo().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getLanguage(){
+    mathwallet.getLanguage().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWalletType(){
+    mathwallet.getWalletType().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getCurrentWallet(){
+    mathwallet.getCurrentWallet().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWallets(){
+    mathwallet.getWallets().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWalletList_ETH(){
+    mathwallet.getWalletList('ETH').then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWalletList_EOS(){
+    mathwallet.getWalletList('EOS').then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWalletList_NEO(){
+    mathwallet.getWalletList('NEO').then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  function getWalletList_ONT(){
+    mathwallet.getWalletList('ONT').then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }
+
+  mathwallet.getCurrentWallet().then((res) => {
+    document.getElementById('info').innerHTML = JSON.stringify(res);
+  });
+</script>
+</body>
+</html>

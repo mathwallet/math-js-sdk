@@ -1,0 +1,24 @@
+{
+  "name": "math-js-sdk",
+  "version": "1.0.0",
+  "description": "Javascript SDK for MathWallet",
+  "main": "src/mathwallet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MathWallet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MediShares/math-js-sdk.git"
+  },
+  "author": "MathWallet Old-Driver-Rollover Team",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.27.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
+}
