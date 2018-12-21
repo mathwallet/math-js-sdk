@@ -106,6 +106,10 @@ const WalletTypes = {
 };
 
 class MathApp {
+  isMath() {
+    return browser.mdsApp;
+  }
+
   openUrl(url) {
     return postMessage.send('openURL', {url : url});
   }

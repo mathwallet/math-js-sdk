@@ -1,7 +1,12 @@
 import PostMessage from './PostMessage';
 import WalletTypes from './WalletTypes';
+import browser from '../util/Browser';
 
 class MathApp {
+  isMath() {
+    return browser.mdsApp;
+  }
+
   openUrl(url) {
     return PostMessage.send('openURL', {url : url});
   }

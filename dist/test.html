@@ -121,9 +121,13 @@
     });
   }
 
-  mathwallet.getCurrentWallet().then((res) => {
-    document.getElementById('info').innerHTML = JSON.stringify(res);
-  });
+  if(mathwallet.isMath()){
+    mathwallet.getCurrentWallet().then((res) => {
+      document.getElementById('info').innerHTML = JSON.stringify(res);
+    });
+  }else{
+    document.getElementById('info').innerHTML = "Not in MathWallet";
+  }
 </script>
 </body>
 </html>

@@ -38,6 +38,15 @@ var mathwallet = window.mathwallet;
 适用于麦子钱包DAPP浏览器的通用方法  
 Common method for MathWallet DAPP Browser
 
+#### isMath
+```javascript
+mathwallet.isMath();
+```
+Return
+```javascript
+true
+```
+
 #### getAppInfo
 获取用户麦子钱包信息  
 Get user MathWallet info
