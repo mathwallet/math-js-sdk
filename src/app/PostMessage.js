@@ -2,9 +2,9 @@ import browser from '../util/Browser';
 
 class PostMessage {
   constructor(browser) {
-    if(browser.android) {
+    if(browser.mdsApp && browser.android) {
       this.postMessageHandler = window.mds;
-    }else if(browser.iPhone){
+    }else if(browser.mdsApp && browser.iPhone && typeof window.webkit != 'undefined'){
       this.postMessageHandler = window.webkit.messageHandlers.mds;
     }else{
       // this.postMessageHandler = window;

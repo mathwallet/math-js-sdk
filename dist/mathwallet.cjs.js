@@ -18,9 +18,9 @@ const browser = {
 
 class PostMessage {
   constructor(browser$$1) {
-    if(browser$$1.android) {
+    if(browser$$1.mdsApp && browser$$1.android) {
       this.postMessageHandler = window.mds;
-    }else if(browser$$1.iPhone){
+    }else if(browser$$1.mdsApp && browser$$1.iPhone && typeof window.webkit != 'undefined'){
       this.postMessageHandler = window.webkit.messageHandlers.mds;
     }else{
       // this.postMessageHandler = window;
