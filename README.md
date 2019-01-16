@@ -58,7 +58,8 @@ Return
 {
   "name": "Math Wallet",
   "client": "iOS",
-  "version": "1.9.3"
+  "version": "1.9.3",
+  "deviceId": "2FB1AD00-20C7-45FF-AE94-A2F30A02F8F6"
 }
 ```
 
