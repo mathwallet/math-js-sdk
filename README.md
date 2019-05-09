@@ -256,8 +256,11 @@ OR
 ```javascript
 let transaction = {
   from : from,
-  amount : amount,
   to : to,
+  amount : amount,
+  contract : contract,
+  precision : precision,
+  symbol : symbol,
   memo : memo
 }
 mathwallet.NEO.transfer(transaction).then(console.log);
