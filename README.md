@@ -63,6 +63,47 @@ Return
 }
 ```
 
+#### share
+分享图片或链接到社交平台，如微信 
+Share to third app like Wechat.
+```javascript
+// Image
+mathwallet.shareTo(1,{
+      "imageURL": "https://medishares-cn.oss-cn-hangzhou.aliyuncs.com/dapp/263R1568603688.jpg",
+      // Extra Data
+      // "activity": {
+      //   "type": "event",
+      //   "app": "app",
+      //   "event": "share",
+      //   "name": params.name,
+      //   "data": params.data
+      // }
+      }
+    ).then(console.log);
+// Link
+mathwallet.shareTo(2,{
+      "title": "Math",
+      "desc": "Math Wallet",
+      "link": "https://www.mathwallet.org",
+      "thumImage": "https://medishares-cn.oss-cn-hangzhou.aliyuncs.com/dapp/263R1568603688.jpg",
+      // Extra Data
+      // "activity": {
+      //   "type": "event",
+      //   "app": "app",
+      //   "event": "share",
+      //   "name": params.name,
+      //   "data": params.data
+      // }
+      }
+    ).then(console.log);
+```
+Return
+```javascript
+{
+  "result": 1
+}
+```
+
 #### openUrl
 打开一个新的浏览器窗口  
 Open a new webview tab
@@ -183,11 +224,11 @@ Return
 }
 ```
 
-#### getWalletsWithType
+#### getWalletList
 获取用户某类型的钱包列表  
 Get user wallets of the type
 ```javascript
-mathwallet.getWalletsWithType("EOS").then(console.log);
+mathwallet.getWalletList("EOS").then(console.log);
 ```
 Return
 ```javascript

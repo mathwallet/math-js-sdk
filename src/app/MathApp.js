@@ -8,11 +8,11 @@ class MathApp {
   }
 
   openUrl(url) {
-    return PostMessage.send('openURL', {url : url});
+    return PostMessage.send('openURL', { url: url });
   }
 
   openThirdApp(url) {
-    return PostMessage.send('openThirdApplication', {appSchemeURL : url});
+    return PostMessage.send('openThirdApplication', { appSchemeURL: url });
   }
 
   close() {
@@ -25,34 +25,40 @@ class MathApp {
 
   // 0-normal 1-fullScreen
   fullScreen(mode = 1) {
-    return PostMessage.send('fullScreen', {mode : mode});
+    return PostMessage.send('fullScreen', { mode: mode });
   }
 
   // 0-portrait 1-landscape
   orientation(mode = 0) {
     let orientation = 'portrait';
-    switch(mode)
-    {
+    switch (mode) {
       case 1:
         orientation = 'landscape';
         break;
       default:
         orientation = 'portrait';
     }
-    return PostMessage.send('deviceOrientation', {orientation : orientation});
+    return PostMessage.send('deviceOrientation', { orientation: orientation });
   }
 
   share(params) {
-    return PostMessage.send('shareAction',{
-        "type":1,
-        "imageURL":params.img,
-        "activity":{
-          "type": "event",
-          "app": "app",
-          "event": "share",
-          "name": params.name,
-          "data": params.data
-        }
+    return PostMessage.send('shareAction', {
+      "type": 1,
+      "imageURL": params.img,
+      "activity": {
+        "type": "event",
+        "app": "app",
+        "event": "share",
+        "name": params.name,
+        "data": params.data
+      }
+    });
+  }
+  // 1-image 2-link
+  shareTo(type = 1, params = {}) {
+    return PostMessage.send('shareAction', {
+      "type": type,
+      ...params
     });
   }
 
@@ -62,9 +68,9 @@ class MathApp {
 
   getLanguage() {
     return new Promise((resolve, reject) => {
-      PostMessage.send('getLanguage',{},true).then((language) => {
+      PostMessage.send('getLanguage', {}, true).then((language) => {
         resolve(language);
-      },reject);
+      }, reject);
     });
   }
 
@@ -86,7 +92,7 @@ class MathApp {
 
   getWalletList(type) {
     let typeID = WalletTypes.getID(type);
-    return PostMessage.send('getWalletsWithType', {type : typeID});
+    return PostMessage.send('getWalletsWithType', { type: typeID });
   }
 
   postCustomMessage(method, payload) {
