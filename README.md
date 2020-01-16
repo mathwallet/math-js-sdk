@@ -59,6 +59,7 @@ Return
   "name": "Math Wallet",
   "client": "iOS",
   "version": "1.9.3",
+  "build": "25",
   "deviceId": "2FB1AD00-20C7-45FF-AE94-A2F30A02F8F6"
 }
 ```
@@ -94,6 +95,11 @@ mathwallet.shareTo(2,{
       //   "name": params.name,
       //   "data": params.data
       // }
+      }
+    ).then(console.log);
+// Save to album
+mathwallet.shareTo(3,{
+      "imageURL": "https://medishares-cn.oss-cn-hangzhou.aliyuncs.com/dapp/263R1568603688.jpg"
       }
     ).then(console.log);
 ```

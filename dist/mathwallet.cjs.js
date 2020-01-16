@@ -82,14 +82,27 @@ let postMessage = new PostMessage(browser);
 
 let list = new Map();
 
-list.set(1 , 'ETH');
-list.set(2 , 'NEO');
-list.set(3 , 'EOS');
-list.set(4 , 'EOSFORCE');
-list.set(5 , 'ONT');
-list.set(6 , 'BTC');
-list.set(7 , 'ESN');
-list.set(8 , 'TRX');
+list.set(1, 'ETH');
+list.set(2, 'NEO');
+list.set(3, 'EOS');
+list.set(4, 'EOSFORCE');
+list.set(5, 'ONT');
+list.set(6, 'BTC');
+list.set(7, 'ESN');
+list.set(8, 'TRX');
+list.set(9, 'NAS');
+list.set(10, 'BOS');
+list.set(11, 'ENU');
+list.set(12, 'TELOS');
+list.set(13, 'ZILLIQA');
+list.set(14, 'BINANCE');
+list.set(15, 'IRIS');
+list.set(16, 'COSMOS');
+list.set(17, 'CHAINX');
+list.set(19, 'CODEX');
+list.set(20, 'VECHAIN');
+list.set(21, 'FT');
+list.set(19001, 'KUSAMA');
 
 const WalletTypes = {
   getType(id) {
@@ -98,8 +111,8 @@ const WalletTypes = {
 
   getID(type) {
     type = type.toUpperCase();
-    for ( const [ key, value ] of list ) {
-      if(value == type) return key;
+    for (const [key, value] of list) {
+      if (value == type) return key;
     }
     return 0;
   }
@@ -111,11 +124,11 @@ class MathApp {
   }
 
   openUrl(url) {
-    return postMessage.send('openURL', {url : url});
+    return postMessage.send('openURL', { url: url });
   }
 
   openThirdApp(url) {
-    return postMessage.send('openThirdApplication', {appSchemeURL : url});
+    return postMessage.send('openThirdApplication', { appSchemeURL: url });
   }
 
   close() {
@@ -128,34 +141,40 @@ class MathApp {
 
   // 0-normal 1-fullScreen
   fullScreen(mode = 1) {
-    return postMessage.send('fullScreen', {mode : mode});
+    return postMessage.send('fullScreen', { mode: mode });
   }
 
   // 0-portrait 1-landscape
   orientation(mode = 0) {
     let orientation = 'portrait';
-    switch(mode)
-    {
+    switch (mode) {
       case 1:
         orientation = 'landscape';
         break;
       default:
         orientation = 'portrait';
     }
-    return postMessage.send('deviceOrientation', {orientation : orientation});
+    return postMessage.send('deviceOrientation', { orientation: orientation });
   }
 
   share(params) {
-    return postMessage.send('shareAction',{
-        "type":1,
-        "imageURL":params.img,
-        "activity":{
-          "type": "event",
-          "app": "app",
-          "event": "share",
-          "name": params.name,
-          "data": params.data
-        }
+    return postMessage.send('shareAction', {
+      "type": 1,
+      "imageURL": params.img,
+      "activity": {
+        "type": "event",
+        "app": "app",
+        "event": "share",
+        "name": params.name,
+        "data": params.data
+      }
+    });
+  }
+  // 1-image 2-link 3-album
+  shareTo(type = 1, params = {}) {
+    return postMessage.send('shareAction', {
+      "type": type,
+      ...params
     });
   }
 
@@ -165,9 +184,9 @@ class MathApp {
 
   getLanguage() {
     return new Promise((resolve, reject) => {
-      postMessage.send('getLanguage',{},true).then((language) => {
+      postMessage.send('getLanguage', {}, true).then((language) => {
         resolve(language);
-      },reject);
+      }, reject);
     });
   }
 
@@ -189,7 +208,7 @@ class MathApp {
 
   getWalletList(type) {
     let typeID = WalletTypes.getID(type);
-    return postMessage.send('getWalletsWithType', {type : typeID});
+    return postMessage.send('getWalletsWithType', { type: typeID });
   }
 
   postCustomMessage(method, payload) {
