@@ -170,7 +170,7 @@ class MathApp {
       }
     });
   }
-  // 1-image 2-link
+  // 1-image 2-link 3-album
   shareTo(type = 1, params = {}) {
     return postMessage.send('shareAction', {
       "type": type,

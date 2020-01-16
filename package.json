@@ -1,6 +1,6 @@
 {
   "name": "math-js-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Javascript SDK for MathWallet",
   "main": "dist/mathwallet.cjs.js",
   "scripts": {
