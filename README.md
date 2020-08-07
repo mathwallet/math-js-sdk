@@ -203,11 +203,11 @@ Return
 "cn"
 ```
 
-#### getWalletType
+#### getCurrentWalletType
 获取用户当前钱包类型  
 Get user current wallet type
 ```javascript
-mathwallet.getWalletType().then(console.log);
+mathwallet.geCurrentWalletType().then(console.log);
 ```
 Return
 ```javascript
@@ -227,6 +227,19 @@ Return
   "nickname":"medisharesbp",
   "address":"medisharesbp",
   "authority":"active"
+}
+```
+#### walletPicker
+钱包地址选取器（多地址弹框，由用户授权使用哪个账户）  
+Wallet Picker
+```javascript
+mathwallet.walletPicker("ETH").then(console.log);
+```
+Return
+```javascript
+{
+  "nickname":"medisharesbp",
+  "address":"medisharesbp"
 }
 ```
 

@@ -77,22 +77,25 @@ class MathApp {
   getWalletType() {
     return new Promise((resolve, reject) => {
       PostMessage.send('activeWalletType').then((res) => {
-        resolve(WalletTypes.getType(res.type));
+        resolve(res.blockchain || WalletTypes.getType(res.type));
       }, reject);
     });
   }
-
+  getCurrentWalletType() {
+    return this.getWalletType();
+  }
   getCurrentWallet() {
     return PostMessage.send('activeWalletAccount');
   }
-
+  walletPicker(type) {
+    return PostMessage.send('walletPicker', { blockchain: type });
+  }
   getWallets() {
     return PostMessage.send('selectWallets');
   }
-
   getWalletList(type) {
     let typeID = WalletTypes.getID(type);
-    return PostMessage.send('getWalletsWithType', { type: typeID });
+    return PostMessage.send('getWalletsWithType', { type: typeID, blockchain: type });
   }
 
   postCustomMessage(method, payload) {
