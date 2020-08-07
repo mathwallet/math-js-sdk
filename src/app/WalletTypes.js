@@ -17,10 +17,11 @@ list.set(14, 'BINANCE');
 list.set(15, 'IRIS');
 list.set(16, 'COSMOS');
 list.set(17, 'CHAINX');
-list.set(19, 'CODEX');
+list.set(18, 'CODEX');
+list.set(19, 'POLKADOT');
 list.set(20, 'VECHAIN');
 list.set(21, 'FT');
-list.set(19, 'POLKADOT');
+list.set(22, 'COINEX');
 list.set(19001, 'KUSAMA');
 
 const WalletTypes = {

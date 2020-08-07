@@ -229,6 +229,21 @@ Return
   "authority":"active"
 }
 ```
+#### walletPicker
+钱包地址选取器（多地址弹框，由用户授权使用哪个账户） 
+Wallet Picker
+```javascript
+mathwallet.walletPicker(type).then(console.log);
+```
+Return
+```javascript
+{
+  "blockchain":"EOS",
+  "nickname":"medisharesbp",
+  "address":"medisharesbp",
+  "authority":"active"
+}
+```
 
 #### getWalletList
 获取用户某类型的钱包列表  
