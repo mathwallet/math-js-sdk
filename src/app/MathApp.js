@@ -81,6 +81,9 @@ class MathApp {
       }, reject);
     });
   }
+  getCurrentWalletType() {
+    return this.getWalletType();
+  }
   getCurrentWallet() {
     return PostMessage.send('activeWalletAccount');
   }
