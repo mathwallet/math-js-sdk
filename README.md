@@ -233,6 +233,7 @@ Return
 钱包地址选取器（多地址弹框，由用户授权使用哪个账户）  
 Wallet Picker
 ```javascript
+// "BTC"、"ETH"、"EOS"、"TRX"、"POLKADOT"、"ONT"
 mathwallet.walletPicker("ETH").then(console.log);
 ```
 Return
@@ -247,6 +248,7 @@ Return
 获取用户某类型的钱包列表  
 Get user wallets of the type
 ```javascript
+// "BTC"、"ETH"、"EOS"、"TRX"、"POLKADOT"、"ONT"
 mathwallet.getWalletList("EOS").then(console.log);
 ```
 Return
