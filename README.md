@@ -71,6 +71,7 @@ Share to third app like Wechat.
 // Image
 mathwallet.shareTo(1,{
       "imageURL": "https://medishares-cn.oss-cn-hangzhou.aliyuncs.com/dapp/263R1568603688.jpg",
+      // "text": "Share Text",
       // Extra Data
       // "activity": {
       //   "type": "event",
